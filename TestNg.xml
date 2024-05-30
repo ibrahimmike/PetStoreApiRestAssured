@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API testing"   >
+    <listeners>
+        <listener class-name="api.listeners.Listeners"></listener>
+    </listeners>
+    <test name="Pet Endpoints Testing"  thread-count="6" parallel="false" >
+        <classes >
+            <class name="api.test.PetTests"/>
+        </classes>
+    </test>
+    <test name="Users Endpoints Testing">
+        <classes>
+            <class name="api.test.UserTests"/>
+        </classes>
+    </test>
+    <test name="Store endpoints tests">
+        <classes>
+            <class name="api.test.StoreTests"/>
+        </classes>
+    </test>
+</suite>
