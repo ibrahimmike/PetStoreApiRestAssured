@@ -17,7 +17,6 @@ public class PetEndpoints {
                 .accept(ContentType.JSON)
                 .contentType(ContentType.JSON)
                 .body(pet)
-                .log().body()
                 .when().
                 post(Routes.postAddPet_url);
 
@@ -29,7 +28,6 @@ public class PetEndpoints {
                 .pathParam("petId",id)
                 .multiPart("additionalMetadata",file.getAdditionalMetadata(), "text/plain")
                 .multiPart("file" , file.getFile())
-                .log().all()
                 .when()
                 .post(Routes.addPetPicture_url);
     }
@@ -73,7 +71,6 @@ public class PetEndpoints {
                 .contentType(ContentType.JSON)
                 .header("api_key", "ergergewrgergerg")
                 .pathParam("id", id)
-                .log().all()
                 .when().delete(Routes.deletePet_url);
     }
 }

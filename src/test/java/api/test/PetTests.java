@@ -64,7 +64,7 @@ public class PetTests extends BaseTest {
     @Test(priority = 5)
     public void getPetById(){
         Response response = PetEndpoints.findPetById(payLoad.getId());
-        response.then().log().all();
+        response.then().statusCode(200);
     }
     @Test(priority =  6)
     public void upDatePetNameAndStatusById(){
@@ -72,12 +72,13 @@ public class PetTests extends BaseTest {
         ns.setName(faker.dog().name());
         ns.setStatus("sold");
         Response response = PetEndpoints.updatePetNameAndStatus(payLoad.getId(),ns);
-        response.then().statusCode(200).log().all();
+        response.then().statusCode(200);
     }
     @Test(priority= 7)
     public void deletePetWithId(){
         Response response = PetEndpoints.deletePet(payLoad.getId());
-        response.then().log().all();
+        response.then().statusCode(200);
+    //    response.then().log().all();
     }
 
 

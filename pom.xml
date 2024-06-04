@@ -86,9 +86,6 @@
             <artifactId>lombok</artifactId>
             <version>1.18.28</version>
         </dependency>
-
-
-
     </dependencies>
 
     <build>
@@ -128,7 +125,6 @@
                 <source>1.8</source>
                 <target>1.8</target>
             </configuration>
-
         </plugin>
 
 

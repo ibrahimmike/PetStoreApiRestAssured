@@ -12,9 +12,9 @@ public class Constants {
 
     private static String createExtentReportPath(){
         if(ReadPropertyFiles.getProperty("overrideResults").equalsIgnoreCase("no")){
-            return "testOutput/" + dt.toString()+".html";
+            return "testOutput/" + dt.toString()+"test.html";
         }else {
-            return "testOutput"+".html";
+            return "testOutput/"+"test.html";
         }
     }
 }

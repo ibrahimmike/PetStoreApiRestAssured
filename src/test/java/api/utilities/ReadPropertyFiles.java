@@ -6,8 +6,12 @@ import java.util.*;
 
 public class ReadPropertyFiles {
 
+
+    private static String con = ReadPropertyFiles.class.getClassLoader().getResource("default.properties").getFile();
+
     private static Properties props;
     private static Map<String, String> conf = new HashMap<>();
+
 
 
 
@@ -40,7 +44,7 @@ public class ReadPropertyFiles {
 
     private static Properties readProperties(){
         props = new Properties();
-        try (InputStream input = new FileInputStream("src/test/resources/default.properties")){
+        try (InputStream input = new FileInputStream(con)){
             props.load(input);
         }catch(Exception e){
             throw new RuntimeException("Unable to read the property file " + "default.properties" );

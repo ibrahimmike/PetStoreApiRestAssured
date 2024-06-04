@@ -20,7 +20,6 @@ public class UserEndpoints {
                .contentType(ContentType.JSON)
                .accept(ContentType.JSON)
                .body(payload)
-               .log().body()
                 .when().post(Routes.post_url);
     }
     public static Response readUser(String userName){
